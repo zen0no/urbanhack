@@ -1,6 +1,6 @@
 dataset_type = 'CocoDataset'
 data_root = 'data/'
-classes = ['empty', 'filled', 'window']
+
 
 
 backend_args = None
@@ -21,6 +21,8 @@ test_pipeline = [
                                           'img_shape', 'scale_factor'))
 ]
 
+
+
 train_dataloader = dict(
     batch_size=2,
     num_workers=2,
@@ -30,7 +32,6 @@ train_dataloader = dict(
     dataset=dict(
         type=dataset_type,
         data_root=data_root,
-        classes=classes,
         ann_file='train/_annotations.coco.json',
         data_prefix=dict(img='train/'),
         pipeline=train_pipeline,
@@ -45,7 +46,6 @@ val_dataloader = dict(
     dataset=dict(
         type=dataset_type,
         data_root=data_root,
-        classes=classes,
         ann_file='valid/_annotations.coco.json',
         data_prefix=dict(img='valid/'),
         pipeline=test_pipeline,
@@ -60,7 +60,6 @@ test_dataloader = dict(
     dataset=dict(
         type=dataset_type,
         data_root=data_root,
-        classes=classes,
         ann_file='test/_annotations.coco.json',
         data_prefix=dict(img='test/'),
         pipeline=test_pipeline,
