@@ -24,7 +24,7 @@ model = dict(
         ),
     neck=dict(
         type=MoCoV2Neck,
-        in_channels=2048,
+        in_channels=1024,
         hid_channels=2048,
         out_channels=128,
         with_avg_pool=True),

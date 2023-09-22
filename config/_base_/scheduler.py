@@ -5,7 +5,7 @@ from mmengine.optim.optimizer.optimizer_wrapper import OptimWrapper
 
 optim_wrapper = dict(
         type=OptimWrapper,
-        optimizer=dict(type='SGD', lr=0.03, weight_decay=1e-4, momentum=0.9))
+        optimizer=dict(type='Adam', lr=0.01))
 
 # learning rate scheduler
 param_scheduler = [

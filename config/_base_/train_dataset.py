@@ -54,7 +54,7 @@ train_pipeline = [
 ]
 
 train_dataloader = dict(
-    batch_size=32,
+    batch_size=8,
     num_workers=4,
     drop_last=True,
     persistent_workers=True,
