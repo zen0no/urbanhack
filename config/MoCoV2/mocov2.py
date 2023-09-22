@@ -1,7 +1,7 @@
 from mmengine.config import read_base
 
 from mmpretrain.models.selfsup.moco import MoCo
-from mmpretrain.models.backbones import ResNet
+from mmpretrain.models.backbones import CSPDarkNet
 from mmpretrain.models.necks import MoCoV2Neck
 from mmpretrain.models.heads import ContrastiveHead
 
@@ -18,13 +18,12 @@ model = dict(
     feat_dim=128,
     momentum=0.001,
     backbone=dict(
-        type=ResNet,
-        depth=50,
+        type=CSPDarkNet,
+        depth=53,
         norm_cfg=dict(type='BN'),
-        zero_init_residual=False),
+        ),
     neck=dict(
-        type=MoCoV2Neck
-        ,
+        type=MoCoV2Neck,
         in_channels=2048,
         hid_channels=2048,
         out_channels=128,

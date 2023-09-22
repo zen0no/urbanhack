@@ -63,6 +63,7 @@ train_dataloader = dict(
     dataset=dict(
         type=dataset_type,
         data_root=data_root,
+        data_prefix='selfsup',
         pipeline=train_pipeline,
         with_label=False))
 

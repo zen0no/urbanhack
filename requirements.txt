@@ -4,3 +4,5 @@ torch==2.0.1
 torchvision==0.15.2
 tqdm==4.65.2
 ultralytics==8.0.184
+mmengine
+mmpretrain
