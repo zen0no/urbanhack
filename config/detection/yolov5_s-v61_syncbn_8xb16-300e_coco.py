@@ -261,7 +261,7 @@ default_hooks = dict(
     checkpoint=dict(
         type='CheckpointHook',
         interval=save_checkpoint_intervals,
-        save_best='auto',
+        save_best='coco/bbox_mAP',
         max_keep_ckpts=max_keep_ckpts))
 
 custom_hooks = [
@@ -274,12 +274,12 @@ custom_hooks = [
         priority=49)
 ]
 
-val_evaluator = dict(
-    type='mmdet.CocoMetric',
-    proposal_nums=(100, 1, 10),
-    ann_file=data_root + val_ann_file,
-    metric='bbox')
-test_evaluator = val_evaluator
+#val_evaluator = dict(
+#    type='mmdet.CocoMetric',
+#    proposal_nums=(100, 1, 10),
+#    ann_file=data_root + val_ann_file,
+#    metric='bbox')
+#test_evaluator = val_evaluator
 
 train_cfg = dict(
     type='EpochBasedTrainLoop',
