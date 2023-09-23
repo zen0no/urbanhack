@@ -79,7 +79,7 @@ obj_level_weights = [4., 1., 0.4]
 lr_factor = 0.01  # Learning rate scaling factor
 weight_decay = 0.0005
 # Save model checkpoint and validation intervals
-save_checkpoint_intervals = 10
+save_checkpoint_intervals = 1
 # The maximum checkpoints to keep.
 max_keep_ckpts = 3
 # Single-scale training is recommended to
@@ -274,12 +274,12 @@ custom_hooks = [
         priority=49)
 ]
 
-#val_evaluator = dict(
-#    type='mmdet.CocoMetric',
-#    proposal_nums=(100, 1, 10),
-#    ann_file=data_root + val_ann_file,
-#    metric='bbox')
-#test_evaluator = val_evaluator
+val_evaluator = dict(
+    type='mmdet.CocoMetric',
+    proposal_nums=(100, 1, 10),
+    ann_file=data_root + val_ann_file,
+    metric='bbox')
+test_evaluator = val_evaluator
 
 train_cfg = dict(
     type='EpochBasedTrainLoop',
