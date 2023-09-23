@@ -1,9 +1,7 @@
 _base_ = './yolov5_s-v61_syncbn_8xb16-300e_coco.py'
 
-
 # import mmselfsup.models to trigger register_module in mmselfsup
-checkpoint_file = '/home/ondrey/coding/urbanhack_rim/\
-        work_dirs/MoCoV2/mocov2/epoch_162.pth'
+checkpoint_file = 'yolo/checkpoint/checkpoint.pth'
 deepen_factor = _base_.deepen_factor
 widen_factor = 1.0
 channels = [512, 1024, 2048]
