@@ -1,12 +1,12 @@
 _base_ = ['../_base_/runtime/detection_runtime.py', '../_base_/det_p5_tta.py']
 
-data_root = 'data/detection'
+data_root = 'data/detection/'
 
-train_ann_file = 'data/train/_annotations.coco.json'
-train_data_prefix = 'data/train'
+train_ann_file = 'train/_annotations.coco.json'
+train_data_prefix = 'train'
 
-val_ann_file = 'data/val/_annotations.coco.json'
-val_data_prefix = 'data/val'
+val_ann_file = 'valid/_annotations.coco.json'
+val_data_prefix = 'valid'
 
 
 num_classes = 3
