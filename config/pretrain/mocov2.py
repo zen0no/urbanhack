@@ -8,9 +8,9 @@ from mmpretrain.models.heads import ContrastiveHead
 from mmpretrain.models.losses.cross_entropy_loss import CrossEntropyLoss
 
 with read_base():
-    from .._base_.train_dataset import *
-    from .._base_.runtime import *
-    from .._base_.scheduler import *
+    from .._base_.dataset.pretrain_dataset import *
+    from .._base_.runtime.pretrain_runtime import *
+    from .._base_.scheduler.pretrain_scheduler import *
 
 model = dict(
     type=MoCo,
