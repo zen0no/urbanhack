@@ -238,6 +238,7 @@ train_dataloader = dict(
     dataset=dict(
         type=dataset_type,
         data_root=data_root,
+        metainfo=dict(classes=classes),
         ann_file=train_ann_file,
         data_prefix=dict(img=train_data_prefix),
         filter_cfg=dict(filter_empty_gt=False, min_size=32),
