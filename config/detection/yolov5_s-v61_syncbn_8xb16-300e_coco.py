@@ -42,6 +42,7 @@ model_test_cfg = dict(
 img_scale = (640, 640)  # width, height
 # Dataset type, this will be used to define the dataset
 dataset_type = 'YOLOv5CocoDataset'
+classes = ('empty', 'filled', 'window')
 # Batch size of a single GPU during validation
 val_batch_size_per_gpu = 1
 # Worker to pre-fetch data for each single GPU during validation
@@ -202,6 +203,7 @@ train_dataloader = dict(
     dataset=dict(
         type=dataset_type,
         data_root=data_root,
+        metainfo=dict(classes=classes),
         ann_file=train_ann_file,
         data_prefix=dict(img=train_data_prefix),
         filter_cfg=dict(filter_empty_gt=False, min_size=32),
@@ -231,6 +233,7 @@ val_dataloader = dict(
     sampler=dict(type='DefaultSampler', shuffle=False),
     dataset=dict(
         type=dataset_type,
+        metainfo=dict(classes=classes),
         data_root=data_root,
         test_mode=True,
         data_prefix=dict(img=val_data_prefix),
